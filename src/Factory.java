@@ -1,24 +1,53 @@
 public class Factory implements FactoryInterface {
 
+    class myThread implements Runnable {
 
-    int tablica[][] = new int[10][10];
-    int ile_watkow;
+        Thread t;
+
+        myThread()
+        {
+            t = new Thread(this);
+            t.start();
+        }
+
+        @Override
+        public void run() {
+
+
+
+
+        }
+    }
+
+
+    private int threads;
+    private  GeneratorInterface generator;
 
 
     @Override
     public void setGenerator(GeneratorInterface gi) {
-
+        this.generator = gi;
     }
 
     @Override
     public void setNumberOfThreads(int threads) {
-
-        ile_watkow=threads;
-
+        this.threads = threads;
     }
 
     @Override
     public void execute(Table table, int positions) {
+
+
+        myThread[] arrayThreads = new myThread[threads];
+
+        for(int i=0; i<threads ; i++){
+
+            arrayThreads[i] = new myThread();
+
+        }
+
+
+
 
     }
 }
