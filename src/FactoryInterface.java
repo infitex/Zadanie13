@@ -25,6 +25,6 @@ public interface FactoryInterface {
      * @param positions liczba pozycji, które w tablicy mają zostać ustalone na
      *                  true.
      */
-    public void execute(Table table, int positions);
+    public void execute(boolean[] table, int positions);
 
 }
